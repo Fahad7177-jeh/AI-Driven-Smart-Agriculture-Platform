@@ -1,0 +1,18 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+
+# Jupyter cache
+.ipynb_checkpoints/
+
+# Trained models
+*.pkl
+*.h5
+
+# Large datasets
+datasets/PlantVillage/
+
+# VS Code settings
+.vscode/
