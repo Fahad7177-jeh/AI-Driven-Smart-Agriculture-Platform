@@ -1,0 +1,1 @@
+SMART AI FARMING is an AI-powered agriculture platform that helps farmers with crop recommendation, plant disease detection, fertilizer suggestion, irrigation prediction, and crop yield prediction using Machine Learning and Deep Learning models.
