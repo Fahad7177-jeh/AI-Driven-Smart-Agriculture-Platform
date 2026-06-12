@@ -1,0 +1,30 @@
+{
+  "name": "smart-ai-farming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fahad7177-jeh/AI-Based-Smart-Farming-Assistant.git"
+  },
+  "keywords": [],
+  "author": "Fahad",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Fahad7177-jeh/AI-Based-Smart-Farming-Assistant/issues"
+  },
+  "homepage": "https://github.com/Fahad7177-jeh/AI-Based-Smart-Farming-Assistant#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.0",
+    "nodemailer": "^8.0.11"
+  }
+}

@@ -16,3 +16,4 @@ datasets/PlantVillage/
 
 # VS Code settings
 .vscode/
+.env
