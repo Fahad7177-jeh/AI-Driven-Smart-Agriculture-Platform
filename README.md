@@ -42,71 +42,9 @@ Estimates crop yield using historical agricultural and environmental data.
 
 ## System Architecture
 
-```text
-                    🌾 AI-Driven Smart Agriculture Platform
-
-                                  ┌──────────────┐
-                                  │    Farmer    │
-                                  └──────┬───────┘
-                                         │
-                                         ▼
-                         ┌─────────────────────────┐
-                         │      Web Interface      │
-                         │ HTML • CSS • JavaScript │
-                         └───────────┬─────────────┘
-                                     │
-                                     ▼
-                     ┌────────────────────────────────┐
-                     │      Data Collection Layer      │
-                     └────────────────┬───────────────┘
-                                      │
-          ┌───────────────────────────┼───────────────────────────┐
-          │                           │                           │
-          ▼                           ▼                           ▼
- ┌────────────────┐       ┌──────────────────┐       ┌────────────────┐
- │ Soil Data      │       │ Weather Data     │       │ Disease Images │
- │ N, P, K, pH    │       │ Temp, Humidity   │       │ PlantVillage   │
- └────────┬───────┘       └────────┬─────────┘       └───────┬────────┘
-          │                        │                         │
-          └────────────────────────┼─────────────────────────┘
-                                   ▼
-                    ┌──────────────────────────┐
-                    │    Data Preprocessing    │
-                    │ Cleaning • Encoding      │
-                    │ Feature Engineering      │
-                    └─────────────┬────────────┘
-                                  │
-                                  ▼
-                   ┌──────────────────────────────┐
-                   │   Machine Learning Layer     │
-                   └──────────────┬───────────────┘
-                                  │
-       ┌──────────────┬───────────┼───────────┬──────────────┬──────────────┐
-       ▼              ▼           ▼           ▼              ▼
-┌────────────┐ ┌───────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐
-│ Crop       │ │ Disease   │ │ Fertilizer │ │ Irrigation │ │ Yield      │
-│ Recommendation│ Detection │ Recommendation│ Prediction │ Prediction │
-└──────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬────┘ └─────┬──────┘
-       │             │             │             │             │
-       └─────────────┴─────────────┴─────────────┴─────────────┘
-                                   │
-                                   ▼
-                     ┌──────────────────────────┐
-                     │      Prediction Engine   │
-                     └─────────────┬────────────┘
-                                   │
-                                   ▼
-                    ┌───────────────────────────┐
-                    │    Recommendation Layer   │
-                    │ Crop Suggestions          │
-                    │ Disease Alerts            │
-                    │ Fertilizer Guidance       │
-                    │ Irrigation Planning       │
-                    │ Yield Forecasting         │
-                    └───────────────────────────┘
-```
-
----
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7fecf326-bf99-40be-872f-93b0afe068f5" alt="AI-Driven Smart Agriculture Platform Architecture" width="900"/>
+</p>
 
 ## Technology Stack
 
