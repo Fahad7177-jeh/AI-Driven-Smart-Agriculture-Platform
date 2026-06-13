@@ -45,14 +45,47 @@ function FertilizerPage() {
         description="Match the right fertilizer to your soil, crop and nutrient profile."
       />
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
+
           setLoading(true);
           setResult(null);
-          setTimeout(() => {
+
+          const form = new FormData(e.currentTarget);
+
+          const payload = {
+            temperature: Number(form.get("temperature")),
+            humidity: Number(form.get("humidity")),
+            moisture: Number(form.get("moisture")),
+            soil_type: form.get("soil_type"),
+            crop_type: form.get("crop_type"),
+            nitrogen: Number(form.get("nitrogen")),
+            potassium: Number(form.get("potassium")),
+            phosphorous: Number(form.get("phosphorous")),
+          };
+
+          try {
+            const response = await fetch("http://127.0.0.1:8002/predict", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || !data.success) {
+              throw new Error(data.error || "Prediction Failed");
+            }
+
+            setResult(data.fertilizer);
+          } catch (error) {
+            console.error(error);
+            alert("Fertilizer Recommendation Failed");
+          } finally {
             setLoading(false);
-            setResult("Urea");
-          }, 1100);
+          }
         }}
         className="grid gap-6 lg:grid-cols-3"
       >

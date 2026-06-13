@@ -30,22 +30,69 @@ function LoginPage() {
     >
       <form
         className="space-y-4"
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
           setLoading(true);
-          setTimeout(() => {
-            toast.success("Signed in");
-            navigate({ to: "/app/dashboard" });
-          }, 700);
+          const form = new FormData(e.currentTarget);
+
+          const email = form.get("email");
+          const password = form.get("password");
+
+          try {
+            const response = await fetch("http://localhost:5000/api/auth/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email,
+                password,
+              }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.message);
+            }
+
+            localStorage.setItem("token", data.token);
+
+            toast.success("Login Successful");
+
+            navigate({
+              to: "/app/dashboard",
+            });
+          } catch (error) {
+            if (error instanceof Error) {
+              toast.error(error.message);
+            } else {
+              toast.error("Login failed");
+            }
+          } finally {
+            setLoading(false);
+          }
         }}
       >
         <div className="space-y-1.5">
           <Label>Email</Label>
-          <Input type="email" required placeholder="you@farm.io" className="h-11 glass" />
+          <Input
+            type="email"
+            name="email"
+            required
+            placeholder="you@farm.io"
+            className="h-11 glass"
+          />
         </div>
         <div className="space-y-1.5">
           <Label>Password</Label>
-          <Input type="password" required placeholder="••••••••" className="h-11 glass" />
+          <Input
+            type="password"
+            name="password"
+            required
+            placeholder="••••••••"
+            className="h-11 glass"
+          />
         </div>
         <div className="flex items-center justify-between text-sm">
           <label className="flex items-center gap-2 text-muted-foreground">

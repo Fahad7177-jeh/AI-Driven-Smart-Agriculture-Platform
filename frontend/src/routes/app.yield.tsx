@@ -44,14 +44,43 @@ function YieldPage() {
         description="Forecast harvest output using crop, rainfall, pesticide and climate inputs."
       />
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
+
           setLoading(true);
           setResult(null);
-          setTimeout(() => {
+
+          const form = new FormData(e.currentTarget);
+
+          const payload = {
+            crop: form.get("crop"),
+            rainfall: Number(form.get("rainfall")),
+            pesticides: Number(form.get("pesticides")),
+            temperature: Number(form.get("temperature")),
+          };
+
+          try {
+            const response = await fetch("http://127.0.0.1:8004/predict", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+              throw new Error(data.error);
+            }
+
+            setResult(data.predicted_yield);
+          } catch (error) {
+            console.error(error);
+            alert("Yield Prediction Failed");
+          } finally {
             setLoading(false);
-            setResult(48317);
-          }, 1200);
+          }
         }}
         className="grid gap-6 lg:grid-cols-3"
       >

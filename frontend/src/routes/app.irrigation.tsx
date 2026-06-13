@@ -25,6 +25,56 @@ const SEASONS = ["Kharif", "Rabi", "Zaid"];
 const IRR_TYPES = ["Rainfed", "Canal", "Drip", "Sprinkler"];
 const SOURCES = ["Reservoir", "Groundwater", "River", "Rainwater"];
 const REGIONS = ["South", "Central", "North", "East", "West"];
+const soilMap = {
+  Clay: 0,
+  Loamy: 1,
+  Sandy: 2,
+  Silt: 3,
+};
+
+const cropMap = {
+  Wheat: 0,
+  Maize: 1,
+  Cotton: 2,
+  Rice: 3,
+  Sugarcane: 4,
+  Potato: 5,
+};
+
+const stageMap = {
+  Sowing: 0,
+  Vegetative: 1,
+  Flowering: 2,
+  Harvest: 3,
+};
+
+const seasonMap = {
+  Kharif: 0,
+  Rabi: 1,
+  Zaid: 2,
+};
+
+const irrigationTypeMap = {
+  Rainfed: 0,
+  Canal: 1,
+  Drip: 2,
+  Sprinkler: 3,
+};
+
+const sourceMap = {
+  Reservoir: 0,
+  Groundwater: 1,
+  River: 2,
+  Rainwater: 3,
+};
+
+const regionMap = {
+  South: 0,
+  Central: 1,
+  North: 2,
+  East: 3,
+  West: 4,
+};
 
 type Need = "Low" | "Medium" | "High";
 
@@ -41,14 +91,59 @@ function IrrigationPage() {
       />
 
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
+
           setLoading(true);
           setResult(null);
-          setTimeout(() => {
+
+          const form = new FormData(e.currentTarget);
+
+          const payload = {
+            Soil_Type: soilMap[form.get("soil_type") as keyof typeof soilMap],
+            Soil_pH: Number(form.get("soil_ph")),
+            Soil_Moisture: Number(form.get("soil_moisture")),
+            Organic_Carbon: Number(form.get("organic_carbon")),
+            Electrical_Conductivity: Number(form.get("electrical_conductivity")),
+            Temperature_C: Number(form.get("temperature")),
+            Humidity: Number(form.get("humidity")),
+            Rainfall_mm: Number(form.get("rainfall")),
+            Sunlight_Hours: Number(form.get("sunlight_hours")),
+            Wind_Speed_kmh: Number(form.get("wind_speed")),
+            Crop_Type: cropMap[form.get("crop_type") as keyof typeof cropMap],
+            Crop_Growth_Stage: stageMap[form.get("crop_growth_stage") as keyof typeof stageMap],
+            Season: seasonMap[form.get("season") as keyof typeof seasonMap],
+            Irrigation_Type:
+              irrigationTypeMap[form.get("irrigation_type") as keyof typeof irrigationTypeMap],
+            Water_Source: sourceMap[form.get("water_source") as keyof typeof sourceMap],
+            Field_Area_hectare: Number(form.get("field_area")),
+            Mulching_Used: form.get("mulching_used") === "Yes" ? 1 : 0,
+            Previous_Irrigation_mm: Number(form.get("previous_irrigation")),
+            Region: regionMap[form.get("region") as keyof typeof regionMap],
+          };
+
+          try {
+            const response = await fetch("http://127.0.0.1:8003/predict", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+              throw new Error(data.error);
+            }
+
+            setResult(data.irrigation_need);
+          } catch (error) {
+            console.error(error);
+            alert("Irrigation Prediction Failed");
+          } finally {
             setLoading(false);
-            setResult("Medium");
-          }, 1200);
+          }
         }}
         className="grid gap-6 lg:grid-cols-3"
       >

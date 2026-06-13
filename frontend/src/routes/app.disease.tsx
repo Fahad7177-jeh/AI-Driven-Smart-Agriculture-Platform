@@ -14,23 +14,50 @@ export const Route = createFileRoute("/app/disease")({
 function DiseasePage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{ name: string; confidence: number } | null>(null);
   const [dragOver, setDragOver] = useState(false);
 
   const handleFile = (file: File) => {
     const url = URL.createObjectURL(file);
+
     setPreview(url);
+    setSelectedFile(file);
     setResult(null);
   };
 
-  const analyze = () => {
+  const analyze = async () => {
+    if (!selectedFile) return;
+
     setLoading(true);
     setResult(null);
-    setTimeout(() => {
+
+    try {
+      const formData = new FormData();
+      formData.append("image", selectedFile);
+
+      const response = await fetch("http://127.0.0.1:8001/predict", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      setResult({
+        name: data.disease.split("_").join(" "),
+        confidence: data.confidence,
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Disease Detection Failed");
+    } finally {
       setLoading(false);
-      setResult({ name: "Early Blight", confidence: 94.2 });
-    }, 1800);
+    }
   };
 
   return (

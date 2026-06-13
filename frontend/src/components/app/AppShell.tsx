@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import {
   LayoutDashboard,
@@ -46,6 +46,35 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const [user, setUser] = useState<{
+    name: string;
+    email: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem("token");
+
+        if (!token) return;
+
+        const response = await fetch("http://localhost:5000/api/auth/profile", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await response.json();
+
+        setUser(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   return (
     <div className="relative min-h-screen">
@@ -166,9 +195,9 @@ export function AppShell({ children }: { children: ReactNode }) {
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-2 rounded-full glass px-2 py-1.5">
                   <div className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-xs font-semibold text-emerald-950">
-                    A
+                   {user?.name?.charAt(0).toUpperCase() || "U"}
                   </div>
-                  <span className="hidden text-sm md:inline">Anita R.</span>
+                  <span className="hidden text-sm md:inline">{user?.name || "User"}</span>
                   <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
                 </button>
               </DropdownMenuTrigger>

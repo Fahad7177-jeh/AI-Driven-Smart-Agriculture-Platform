@@ -1,10 +1,20 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet, Navigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/app/AppShell";
 
 export const Route = createFileRoute("/app")({
-  component: () => (
+  component: AppLayout,
+});
+
+function AppLayout() {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/login" />;
+  }
+
+  return (
     <AppShell>
       <Outlet />
     </AppShell>
-  ),
-});
+  );
+}

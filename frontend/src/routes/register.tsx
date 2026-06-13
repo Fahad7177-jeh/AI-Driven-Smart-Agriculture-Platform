@@ -29,18 +29,56 @@ function RegisterPage() {
     >
       <form
         className="space-y-4"
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          const f = new FormData(e.currentTarget);
-          if (f.get("password") !== f.get("confirm")) {
+
+          const form = new FormData(e.currentTarget);
+
+          const name = form.get("name");
+          const email = form.get("email");
+          const password = form.get("password");
+          const confirm = form.get("confirm");
+
+          if (password !== confirm) {
             toast.error("Passwords do not match");
             return;
           }
+
           setLoading(true);
-          setTimeout(() => {
-            toast.success("Account created");
-            navigate({ to: "/app/dashboard" });
-          }, 800);
+
+          try {
+            const response = await fetch("http://localhost:5000/api/auth/register", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name,
+                email,
+                password,
+              }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.message);
+            }
+
+            toast.success(data.message);
+
+            navigate({
+              to: "/login",
+            });
+          } catch (error) {
+            if (error instanceof Error) {
+              toast.error(error.message);
+            } else {
+              toast.error("Registration failed");
+            }
+          } finally {
+            setLoading(false);
+          }
         }}
       >
         <div className="space-y-1.5">
