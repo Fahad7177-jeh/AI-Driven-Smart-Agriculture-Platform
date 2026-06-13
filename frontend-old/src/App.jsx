@@ -8,6 +8,10 @@ import ResetPassword from "./pages/ResetPassword";
 import Dashboard from "./pages/Dashboard";
 import CropRecommendation from "./pages/CropRecommendation";
 import ProtectedRoute from "./components/ProtectedRoute";
+import DiseaseDetection from "./pages/DiseaseDetection";
+import YieldPrediction from "./pages/YieldPrediction";
+import FertilizerRecommendation from "./pages/FertilizerRecommendation";
+import IrrigationRecommendation from "./pages/IrrigationRecommendation";
 
 function App() {
   return (
@@ -44,8 +48,44 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+  path="/disease-detection"
+  element={
+    <ProtectedRoute>
+      <DiseaseDetection />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/yield-prediction"
+  element={
+    <ProtectedRoute>
+      <YieldPrediction />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/fertilizer-recommendation"
+  element={
+    <ProtectedRoute>
+      <FertilizerRecommendation />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/irrigation-recommendation"
+  element={
+    <ProtectedRoute>
+      <IrrigationRecommendation />
+    </ProtectedRoute>
+  }
+/>
       </Routes>
     </BrowserRouter>
+
+    
   );
 }
 
