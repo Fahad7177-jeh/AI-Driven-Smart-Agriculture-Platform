@@ -83,7 +83,7 @@ SMART-AI-FARMING
 ### Clone Repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Fahad7177-jeh/AI-Driven-Smart-Agriculture-Platform.git
 ```
 
 ### Backend Setup
@@ -125,7 +125,7 @@ python app.py
 
 ## 📸 Screenshots
 Landing Page
-  <img width="954" height="455" alt="image" src="https://github.com/user-attachments/assets/c4c108fe-e50a-4f36-b06d-a60cb70fd009" />
+<img width="909" height="472" alt="image" src="https://github.com/user-attachments/assets/e888f9ae-12d9-4e1d-a535-ff645c9f628e" />
 
 * Login Page
  <img width="947" height="476" alt="image" src="https://github.com/user-attachments/assets/5401a668-6f4e-4f06-a8ff-837954d2a6b0" />
