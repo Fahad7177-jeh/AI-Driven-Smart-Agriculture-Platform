@@ -126,31 +126,31 @@ python app.py
 ## 📸 Screenshots
 
 ### Landing Page
-<img width="909" height="472" alt="Landing Page" src="YOUR_IMAGE_LINK" />
+<img width="909" height="472" alt="Landing Page" src="https://github.com/user-attachments/assets/e888f9ae-12d9-4e1d-a535-ff645c9f628e" />
 
 ### Login Page
-<img width="947" height="476" alt="Login Page" src="YOUR_IMAGE_LINK" />
+<img width="947" height="476" alt="Login Page" src="https://github.com/user-attachments/assets/5401a668-6f4e-4f06-a8ff-837954d2a6b0" />
 
 ### Dashboard
-<img width="925" height="462" alt="Dashboard" src="YOUR_IMAGE_LINK" />
+<img width="925" height="462" alt="Dashboard" src="https://github.com/user-attachments/assets/a2da9588-5b88-4ab7-ab5d-dddfbec04cbb" />
 
 ### Crop Recommendation
-<img width="935" height="470" alt="Crop Recommendation" src="YOUR_IMAGE_LINK" />
+<img width="935" height="470" alt="Crop Recommendation" src="https://github.com/user-attachments/assets/5f649dd7-c9c2-460b-aa36-3a591b36d401" />
 
 ### Disease Detection
-<img width="943" height="466" alt="Disease Detection" src="YOUR_IMAGE_LINK" />
+<img width="943" height="466" alt="Disease Detection" src="https://github.com/user-attachments/assets/20a82e18-ddad-4751-8c69-9aea1be3678a" />
 
 ### Fertilizer Recommendation
-<img width="956" height="467" alt="Fertilizer Recommendation" src="YOUR_IMAGE_LINK" />
+<img width="956" height="467" alt="Fertilizer Recommendation" src="https://github.com/user-attachments/assets/22d5517c-eb25-4a82-9893-2227ac837ffd" />
 
 ### Irrigation Recommendation
-<img width="941" height="475" alt="Irrigation Recommendation" src="YOUR_IMAGE_LINK" />
+<img width="941" height="475" alt="Irrigation Recommendation" src="https://github.com/user-attachments/assets/c992050f-40f7-4606-9046-0726a813af4e" />
 
 ### Yield Prediction
-<img width="952" height="462" alt="Yield Prediction" src="YOUR_IMAGE_LINK" />
+<img width="952" height="462" alt="Yield Prediction" src="https://github.com/user-attachments/assets/a31c448c-010c-4473-a317-cf2926b49e28" />
 
 ### Profile Page
-<img width="938" height="478" alt="Profile Page" src="YOUR_IMAGE_LINK" />
+<img width="938" height="478" alt="Profile Page" src="https://github.com/user-attachments/assets/f3b25a9c-6228-4d91-8acc-7eb8c3c3326f" />
 
 ---
 ## ⚠️ Challenges Faced
