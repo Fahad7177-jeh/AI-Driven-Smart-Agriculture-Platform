@@ -124,8 +124,9 @@ python app.py
 ---
 
 ## 📸 Screenshots
+
 Landing Page
- <img width="909" height="472" alt="image" src="https://github.com/user-attachments/assets/e888f9ae-12d9-4e1d-a535-ff645c9f628e" />
+<img width="909" height="472" alt="image" src="https://github.com/user-attachments/assets/e888f9ae-12d9-4e1d-a535-ff645c9f628e" />
 
 * Login Page
  <img width="947" height="476" alt="image" src="https://github.com/user-attachments/assets/5401a668-6f4e-4f06-a8ff-837954d2a6b0" />
