@@ -1,215 +1,218 @@
-# 🌾 AI-Driven Smart Agriculture Platform
+# 🌱 SMART AI FARMING
 
-## Overview
-
-The AI-Driven Smart Agriculture Platform is a Machine Learning-based solution developed to support modern farming through intelligent and data-driven decision-making. The platform integrates multiple predictive models for crop recommendation, disease detection, fertilizer recommendation, irrigation prediction, and yield estimation.
-
-By analyzing agricultural and environmental data, the system helps farmers optimize resource utilization, improve crop productivity, and make informed farming decisions. The platform combines Machine Learning, Data Analytics, and Predictive Modeling techniques to deliver actionable insights for sustainable agriculture.
+An AI-powered agriculture platform that helps farmers make data-driven decisions through machine learning and deep learning models.
 
 ---
 
-## Problem Statement
+## 🚀 Features
 
-Agriculture plays a vital role in food production, yet farmers often face challenges in selecting suitable crops, detecting diseases early, managing irrigation efficiently, choosing appropriate fertilizers, and estimating crop yields accurately.
-
-This project aims to address these challenges by providing AI-powered recommendations and predictions that assist farmers in making informed decisions and improving overall agricultural productivity.
-
----
-
-## Features
-
-### 🌱 Crop Recommendation
-
-Recommends the most suitable crop based on soil nutrients, temperature, humidity, rainfall, and pH levels.
-
-### 🦠 Disease Detection
-
-Identifies plant diseases from leaf images and provides disease predictions for early intervention.
-
-### 🌿 Fertilizer Recommendation
-
-Suggests appropriate fertilizers based on soil nutrient composition and crop requirements.
-
-### 💧 Irrigation Prediction
-
-Predicts irrigation needs using environmental and soil conditions.
-
-### 🌾 Yield Prediction
-
-Estimates crop yield using historical agricultural and environmental data.
+- Crop Recommendation
+- Disease Detection
+- Fertilizer Recommendation
+- Irrigation Recommendation
+- Yield Prediction
+- Authentication System
 
 ---
 
-## System Architecture
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7fecf326-bf99-40be-872f-93b0afe068f5" alt="AI-Driven Smart Agriculture Platform Architecture" width="900"/>
-</p>
-
-## Technology Stack
-
-### Programming Languages
-
-* Python
-* JavaScript
+## 🛠️ Tech Stack
 
 ### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- TanStack Router
+- ShadCN UI
 
-* HTML
-* CSS
-* JavaScript
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- Nodemailer
 
-### Machine Learning & Data Science
-
-* NumPy
-* Pandas
-* Scikit-learn
-* TensorFlow
-* Keras
-* Matplotlib
-
-### Database
-
-* Firebase
-
-### Tools
-
-* Git
-* GitHub
-* VS Code
-* Jupyter Notebook
+### AI / ML
+- Python
+- Flask
+- TensorFlow
+- Scikit-Learn
 
 ---
 
-## Machine Learning Models
+## 🏗️ System Architecture
 
-| Module                    | Model Type                         |
-| ------------------------- | ---------------------------------- |
-| Crop Recommendation       | Random Forest Classifier           |
-| Disease Detection         | Convolutional Neural Network (CNN) |
-| Fertilizer Recommendation | Random Forest Classifier           |
-| Irrigation Prediction     | Classification Model               |
-| Yield Prediction          | Regression Model                   |
+<!-- ADD YOUR ARCHITECTURE IMAGE HERE -->
 
+<p align="center">
+  <img src="https://chatgpt.com/s/m_6a2e9db27e748191a7653ae49da37de4" alt="Smart AI Farming Architecture" width="1000"/>
+</p>
 ---
 
-## Dataset Information
+## 📂 Project Structure
 
-The project utilizes multiple agricultural datasets containing:
-
-* Soil Nutrient Data (N, P, K)
-* Temperature
-* Humidity
-* Rainfall
-* Soil pH
-* Crop Labels
-* Plant Disease Images
-* Historical Yield Records
-
-### Dataset Size
-
-* Structured Agricultural Data: 10,000+ records
-* PlantVillage Disease Dataset: Thousands of plant leaf images
-
----
-
-## Project Workflow
-
-### Step 1: Data Collection
-
-Collect agricultural and plant disease datasets.
-
-### Step 2: Data Preprocessing
-
-* Missing Value Handling
-* Data Cleaning
-* Feature Engineering
-* Label Encoding
-* Data Transformation
-
-### Step 3: Model Training
-
-Train separate machine learning models for each agricultural module.
-
-### Step 4: Model Evaluation
-
-Evaluate model performance using standard machine learning metrics.
-
-### Step 5: Integration
-
-Integrate trained models into the web-based application.
-
-### Step 6: Prediction & Recommendation
-
-Generate intelligent recommendations for farmers.
-
----
-
-## Performance Metrics
-
-| Module                    | Accuracy                 |
-| ------------------------- | ------------------------ |
-| Crop Recommendation       | 93%                      |
-| Disease Detection         | 95%                      |
-| Fertilizer Recommendation | 90%                      |
-| Irrigation Prediction     | 89%                      |
-| Yield Prediction          | High Predictive Accuracy |
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Fahad7177-jeh/AI-Driven-Smart-Agriculture-Platform/edit/main/README.md
+```text
+SMART-AI-FARMING
+│
+├── frontend/
+├── backend/
+├── crop-model/
+├── disease-model/
+├── fertilizer-model/
+├── irrigation-model/
+├── yield-model/
+└── datasets/
 ```
 
-Navigate to the project directory:
+---
+
+## 🔑 Authentication Features
+
+- User Registration
+- Login
+- JWT Authentication
+- Protected Routes
+- Forgot Password
+- Reset Password
+- Profile Management
+
+---
+
+## ⚙️ Installation
+
+### Clone Repository
 
 ```bash
-cd AI-Driven-Smart-Agriculture-Platform
+git clone <repo-url>
 ```
 
-Install dependencies:
+### Backend Setup
 
 ```bash
-pip install -r requirements.txt
+cd backend
+npm install
+npm run dev
 ```
 
-Run the application:
+### Frontend Setup
 
 ```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### AI Models
+
+```bash
+cd crop-model
+python app.py
+
+cd disease-model
+python app.py
+
+cd fertilizer-model
+python app.py
+
+cd irrigation-model
+python app.py
+
+cd yield-model
 python app.py
 ```
 
 ---
 
-## Future Enhancements
+## 📸 Screenshots
 
-* Weather API Integration
-* Real-Time Monitoring
-* Mobile Application Support
-* Satellite Image Analysis
-* Advanced Deep Learning Models
+* Dashboard
+* <img width="925" height="462" alt="image" src="https://github.com/user-attachments/assets/a2da9588-5b88-4ab7-ab5d-dddfbec04cbb" />
+
+* Crop Recommendation
+* <img width="935" height="470" alt="image" src="https://github.com/user-attachments/assets/5f649dd7-c9c2-460b-aa36-3a591b36d401" />
+
+* Disease Detection
+* <img width="943" height="466" alt="image" src="https://github.com/user-attachments/assets/20a82e18-ddad-4751-8c69-9aea1be3678a" />
+
+* Fertilizer Recommendation
+* <img width="956" height="467" alt="image" src="https://github.com/user-attachments/assets/22d5517c-eb25-4a82-9893-2227ac837ffd" />
+
+* Irrigation Recommendation
+* <img width="941" height="475" alt="image" src="https://github.com/user-attachments/assets/c992050f-40f7-4606-9046-0726a813af4e" />
+
+* Yield Prediction
+* <img width="952" height="462" alt="image" src="https://github.com/user-attachments/assets/a31c448c-010c-4473-a317-cf2926b49e28" />
+
+* Login Page
+* <img width="947" height="476" alt="image" src="https://github.com/user-attachments/assets/5401a668-6f4e-4f06-a8ff-837954d2a6b0" />
+
+* Profile Page
+* <img width="938" height="478" alt="image" src="https://github.com/user-attachments/assets/f3b25a9c-6228-4d91-8acc-7eb8c3c3326f" />
 
 ---
+## ⚠️ Challenges Faced
 
-## Results
+During the development of Smart AI Farming, several technical challenges were encountered:
 
-* Improved crop recommendation accuracy.
-* Early detection of crop diseases.
-* Efficient fertilizer recommendations.
-* Better irrigation planning.
-* Reliable crop yield estimation.
-* Enhanced decision-making through AI-powered insights.
+### Authentication & Security
+- Implemented JWT-based authentication.
+- Developed secure password reset functionality using email tokens.
+- Protected frontend and backend routes from unauthorized access.
 
----
+### AI Model Integration
+- Integrated multiple Flask-based machine learning services with the Node.js backend.
+- Managed communication between frontend, backend, and AI models.
 
-## Author
+### Disease Detection
+- Trained and deployed a CNN-based disease detection model using plant leaf images.
+- Handled image upload and prediction workflows.
 
-**Shaik Fahad Jahangir**
+### Data Processing
+- Cleaned and preprocessed agricultural datasets for accurate predictions.
+- Managed feature encoding and model compatibility.
 
-Machine Learning Enthusiast | Data Science Intern | Aspiring AI Engineer
+### Deployment Challenges
+- Configuring separate AI services and backend APIs.
+- Handling environment variables and dependency management across modules.
 
+### Frontend Development
+- Building a responsive and modern user interface.
+- Managing state, routing, and API integration across multiple modules.
+
+## 🎯 Future Enhancements
+
+### Unified AI Service
+- Combine all AI modules into a single centralized Flask/FastAPI service.
+
+### Weather API Integration
+- Real-time weather forecasting for improved recommendations.
+
+### Prediction History
+- Store and display previous predictions for farmers.
+
+### Dashboard Analytics
+- Visual insights and charts for farming decisions.
+
+### Multi-Language Support
+- Support regional languages for better accessibility.
+
+### Mobile Application
+- Android and iOS versions of Smart AI Farming.
+
+### AI Chat Assistant
+- Intelligent chatbot for farming-related guidance and support.
+
+### Cloud Deployment
+- Deploy AI models and backend services on cloud platforms for scalability.
+
+### Automated Model Monitoring
+- Track model performance and retrain periodically using updated datasets.
+
+### Smart Notifications
+- Alerts for irrigation schedules, disease risks, and fertilizer recommendations.
+
+## 👨‍💻 Author
+
+Shaik Fahad Jahangir
+
+LinkedIn: https://www.linkedin.com/in/shaik-fahad-jahangir-3746b92b6/
 GitHub: https://github.com/Fahad7177-jeh
